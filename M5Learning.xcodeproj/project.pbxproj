@@ -8,17 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		ED17D9902997DB5B00C29577 /* M5LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17D98F2997DB5B00C29577 /* M5LearningApp.swift */; };
-		ED17D9922997DB5B00C29577 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17D9912997DB5B00C29577 /* ContentView.swift */; };
+		ED17D9922997DB5B00C29577 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17D9912997DB5B00C29577 /* HomeView.swift */; };
 		ED17D9942997DB5E00C29577 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED17D9932997DB5E00C29577 /* Assets.xcassets */; };
 		ED17D9972997DB5E00C29577 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED17D9962997DB5E00C29577 /* Preview Assets.xcassets */; };
+		ED17D9A32997E0AA00C29577 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17D9A22997E0AA00C29577 /* ContentModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		ED17D98C2997DB5B00C29577 /* M5Learning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = M5Learning.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED17D98F2997DB5B00C29577 /* M5LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = M5LearningApp.swift; sourceTree = "<group>"; };
-		ED17D9912997DB5B00C29577 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED17D9912997DB5B00C29577 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		ED17D9932997DB5E00C29577 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED17D9962997DB5E00C29577 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ED17D9A22997E0AA00C29577 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +53,12 @@
 		ED17D98E2997DB5B00C29577 /* M5Learning */ = {
 			isa = PBXGroup;
 			children = (
+				ED17D99F2997DF2900C29577 /* Models */,
+				ED17D99D2997DF0F00C29577 /* Views */,
+				ED17D99E2997DF1B00C29577 /* ViewModels */,
+				ED17D9A12997DF4200C29577 /* Helpers */,
+				ED17D9A02997DF3500C29577 /* Resources */,
 				ED17D98F2997DB5B00C29577 /* M5LearningApp.swift */,
-				ED17D9912997DB5B00C29577 /* ContentView.swift */,
 				ED17D9932997DB5E00C29577 /* Assets.xcassets */,
 				ED17D9952997DB5E00C29577 /* Preview Content */,
 			);
@@ -65,6 +71,43 @@
 				ED17D9962997DB5E00C29577 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ED17D99D2997DF0F00C29577 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED17D9912997DB5B00C29577 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ED17D99E2997DF1B00C29577 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED17D9A22997E0AA00C29577 /* ContentModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ED17D99F2997DF2900C29577 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED17D9A02997DF3500C29577 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ED17D9A12997DF4200C29577 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +180,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED17D9922997DB5B00C29577 /* ContentView.swift in Sources */,
+				ED17D9922997DB5B00C29577 /* HomeView.swift in Sources */,
 				ED17D9902997DB5B00C29577 /* M5LearningApp.swift in Sources */,
+				ED17D9A32997E0AA00C29577 /* ContentModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

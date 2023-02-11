@@ -11,7 +11,8 @@ import SwiftUI
 struct M5LearningApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(ContentModel())
         }
     }
 }
