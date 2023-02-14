@@ -36,6 +36,7 @@ struct HomeCardView: View {
                     Text(title)
                         .bold()
                     Text(description)
+                        .multilineTextAlignment(.leading)
                         .padding(.bottom, 10)
                         .font(.caption)
                     HStack {
@@ -62,6 +63,10 @@ struct HomeCardView: View {
 
 struct HomeCardView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeCardView(image: "swift", title: "preview title", description: "preview description", count: "100 lessons", time: "3 decades")
+        HomeCardView(image: "swift",
+                     title: "preview title",
+                     description: "preview description long enough to make sure it is leading",
+                     count: "100 lessons",
+                     time: "3 decades")
     }
 }

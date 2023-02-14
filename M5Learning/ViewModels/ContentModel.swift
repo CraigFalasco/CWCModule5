@@ -11,6 +11,8 @@ class ContentModel: ObservableObject {
     
     @Published var modules = [Module]()
     var styleData: Data?
+    @Published var currentModule: Module?
+    var currentModuleIndex = 0
     
     init() {
         getLocalData()
@@ -29,7 +31,7 @@ class ContentModel: ObservableObject {
             fatalError("Error getting json data")
         }
         
-        // the style.html is not jsaon, so e don't need the decoder, just leave the style HTML as data
+        // the style.html is not jsaon, so we do not need the decoder, just leave the style HTML as data
         let styleUrl = Bundle.main.url(forResource: "style", withExtension: "html")
         do {
             let styleData = try Data(contentsOf: styleUrl!)
@@ -38,5 +40,17 @@ class ContentModel: ObservableObject {
         catch {
             fatalError("Error getting style HTML data")
         }
+    }
+    
+    func beginModule(_ moduleId: Int) {
+        
+        for index in 0..<modules.count {
+            
+            if modules[index].id == moduleId {
+                currentModuleIndex = index
+                break
+            }
+        }
+        currentModule = modules[currentModuleIndex]
     }
 }
