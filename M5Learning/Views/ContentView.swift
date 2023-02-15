@@ -12,19 +12,32 @@ struct ContentView: View {
     @EnvironmentObject var model: ContentModel
     
     var body: some View {
-        ScrollView {
-            
-            LazyVStack (alignment: .leading) {
+        
+        NavigationView {
+            ScrollView {
                 
-                if model.currentModule != nil {
-                    ForEach(0..<model.currentModule!.content.lessons.count, id: \.self) { index in
+                LazyVStack (alignment: .leading) {
+                    
+                    if model.currentModule != nil {
                         
-                        ContentCardView(index: index)
+                        ForEach(0..<model.currentModule!.content.lessons.count, id: \.self) { index in
+                            
+                            NavigationLink(
+                                destination: ContentDetailView()
+                                    .onAppear(perform: {
+                                        model.beginLesson(index)
+                                    }),
+                                label: {
+                                    ContentCardView(index: index)
+                                })
+                        }
                     }
                 }
+                .accentColor(.black)
+                .padding()
+                .navigationTitle("Learn \(model.currentModule?.category ?? "")")
             }
-            .padding()
-            .navigationTitle("Learn \(model.currentModule?.category ?? "")")
         }
+        .navigationViewStyle(.stack)
     }
 }
