@@ -6,14 +6,26 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct ContentView: View {
+    let url = URL(fileURLWithPath: Bundle.main.path(forResource: "dogsAtPark", ofType: "MOV")!)
+    let videoRatio: CGFloat = 1080 / 1920
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        GeometryReader { geo in
+            VStack (alignment: .leading) {
+                
+                VideoPlayer(player: AVPlayer(url: url))
+                    .frame(height: geo.size.width * videoRatio)
+                
+                Text("Description")
+                    .font(.largeTitle)
+                
+                ScrollView {
+                    Text(descriptionText)
+                }
+            }
         }
         .padding()
     }
