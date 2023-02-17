@@ -9,13 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        WebView(url: URL(string: "https://www.npr.org")!)
+    /*
+     We use a separate view "WebView" because it has to use the WebKit framework and UIViewRepresentable protocol, which allows us to use WebKit within SwiftUI
+     */
     }
 }
 

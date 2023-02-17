@@ -11,6 +11,8 @@
 		EDDB7ADA299FCBCC00362C7E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB7AD9299FCBCC00362C7E /* ContentView.swift */; };
 		EDDB7ADC299FCBCE00362C7E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDB7ADB299FCBCE00362C7E /* Assets.xcassets */; };
 		EDDB7ADF299FCBCE00362C7E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDDB7ADE299FCBCE00362C7E /* Preview Assets.xcassets */; };
+		EDDB7AE6299FCBF500362C7E /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDDB7AE5299FCBF500362C7E /* WebView.swift */; };
+		EDDB7AE9299FCE6400362C7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDDB7AE8299FCE6300362C7E /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		EDDB7AD9299FCBCC00362C7E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EDDB7ADB299FCBCE00362C7E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDDB7ADE299FCBCE00362C7E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EDDB7AE5299FCBF500362C7E /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		EDDB7AE8299FCE6300362C7E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDB7AE9299FCE6400362C7E /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +42,7 @@
 			children = (
 				EDDB7AD6299FCBCC00362C7E /* M5CH7WebView */,
 				EDDB7AD5299FCBCC00362C7E /* Products */,
+				EDDB7AE7299FCE6300362C7E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +61,7 @@
 				EDDB7AD9299FCBCC00362C7E /* ContentView.swift */,
 				EDDB7ADB299FCBCE00362C7E /* Assets.xcassets */,
 				EDDB7ADD299FCBCE00362C7E /* Preview Content */,
+				EDDB7AE5299FCBF500362C7E /* WebView.swift */,
 			);
 			path = M5CH7WebView;
 			sourceTree = "<group>";
@@ -65,6 +72,14 @@
 				EDDB7ADE299FCBCE00362C7E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EDDB7AE7299FCE6300362C7E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDDB7AE8299FCE6300362C7E /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDDB7AE6299FCBF500362C7E /* WebView.swift in Sources */,
 				EDDB7ADA299FCBCC00362C7E /* ContentView.swift in Sources */,
 				EDDB7AD8299FCBCC00362C7E /* M5CH7WebViewApp.swift in Sources */,
 			);
