@@ -14,6 +14,7 @@ struct ContentView: View {
     var body: some View {
         
         NavigationView {
+            
             ScrollView {
                 
                 LazyVStack (alignment: .leading) {
@@ -35,7 +36,7 @@ struct ContentView: View {
                 }
                 .accentColor(.black)
                 .padding()
-                .navigationTitle("Learn \(model.currentModule?.category ?? "")")
+                .navigationBarTitle("Learn \(model.currentModule?.category ?? "")", displayMode: .inline)
             }
         }
         .navigationViewStyle(.stack)

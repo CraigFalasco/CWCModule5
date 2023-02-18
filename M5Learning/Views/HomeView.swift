@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         
         NavigationView {
-            VStack (alignment: .leading) {
+            VStack (alignment: .leading)  {
                 Text("What do you want to do today?")
                     .padding(.leading, 20)
                 ScrollView {
@@ -53,7 +53,8 @@ struct HomeView: View {
                     .accentColor(.black)
                 }
             }
-            .navigationTitle("Get Started")
+            .navigationBarTitle(Text("Get Started"), displayMode: .inline)
+            
         }
     }
 }

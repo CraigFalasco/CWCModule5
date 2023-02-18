@@ -22,6 +22,12 @@ class ContentModel: ObservableObject {
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // Current lesson description or explanation
+    @Published var lessonDescription = NSAttributedString()
+    
+    // current selected content and test
+    @Published var currentContentSelected: Int?
+    
     init() {
         getLocalData()
     }
@@ -61,6 +67,7 @@ class ContentModel: ObservableObject {
         }
         currentModule = modules[currentModuleIndex]
     }
+    
     func beginLesson(_ lessonIndex: Int) {
         
         // check that the lesson index is within range
@@ -72,7 +79,9 @@ class ContentModel: ObservableObject {
         }
         // set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
+        lessonDescription = addStyling(currentLesson!.explanation)
     }
+    
     func hasNextLesson() -> Bool {
         /*
          if currentLessonIndex + 1 < currentModule!.content.lessons.count {
@@ -86,14 +95,36 @@ class ContentModel: ObservableObject {
         // short way to replace the above if statement
         return currentLessonIndex + 1 < currentModule!.content.lessons.count
     }
+    
     func nextLesson() {
         if currentLessonIndex < currentModule!.content.lessons.count - 1 {
             currentLessonIndex += 1
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
+            lessonDescription = addStyling(currentLesson!.explanation)
         }
         else {
             currentLessonIndex = 0
             currentLesson = nil
         }
+    }
+    
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
+        
+        var resultString = NSAttributedString()
+        var data = Data()
+        
+        // add the style html to data
+        if styleData != nil {
+            data.append(self.styleData!)
+        }
+        // add the html text data to data
+        data.append(Data(htmlString.utf8))
+        
+        // finally, convert data to an attributed string
+        if let attributedString = try? NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil) {
+            
+            resultString = attributedString
+        }
+        return resultString
     }
 }

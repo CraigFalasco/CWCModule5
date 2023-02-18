@@ -19,18 +19,17 @@ struct ContentDetailView: View {
         
         VStack {
             
-            Text(lesson?.title ?? "")
             if url != nil {
                 VideoPlayer(player: AVPlayer(url: url!))
                     .cornerRadius(10)
             }
             
             // Description
-            Text("lesson explanation goes here, but after we learn how to use the html style")
+            CodeTextView()
             
             // Button for next lesson, if there is a next lesson
             if model.hasNextLesson() {
-                
+
                     Button(action: {
                         model.nextLesson()
                     }, label: {
@@ -52,12 +51,7 @@ struct ContentDetailView: View {
             }
         }
         .padding()
+        .navigationBarTitle(Text(lesson?.title ?? ""), displayMode: .inline)
     }
 }
 
-struct ContentDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentDetailView()
-            .environmentObject(ContentModel())
-    }
-}
