@@ -39,22 +39,28 @@ struct HomeView: View {
                                         })
                                 
                                 
-                                
-                                HomeCardView(image: module.test.image,
-                                             title: " \(module.category) Test",
-                                             description: module.test.description,
-                                             count: "\(module.test.questions.count) Questions",
-                                             time: module.test.time)
+                                NavigationLink(
+                                    destination:
+                                        TestView()
+                                            .onAppear(perform: {
+                                                model.beginTest(module.id)
+                                        }),
+                                    label: {
+                                        HomeCardView(image: module.test.image,
+                                                     title: " \(module.category) Test",
+                                                     description: module.test.description,
+                                                     count: "\(module.test.questions.count) Questions",
+                                                     time: module.test.time)
+                                    })
                             }
                         }
-                        
+                        .padding()
+                        .accentColor(.black)
                     }
-                    .padding()
-                    .accentColor(.black)
                 }
+                .navigationBarTitle(Text("Get Started"), displayMode: .inline)
+                
             }
-            .navigationBarTitle(Text("Get Started"), displayMode: .inline)
-            
         }
     }
 }

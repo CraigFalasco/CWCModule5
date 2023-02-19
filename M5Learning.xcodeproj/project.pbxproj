@@ -18,6 +18,7 @@
 		ED31669B2997F0D600C03787 /* style.html in Resources */ = {isa = PBXBuildFile; fileRef = ED3166992997F0D600C03787 /* style.html */; };
 		ED31669F2998095D00C03787 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31669E2998095D00C03787 /* Models.swift */; };
 		ED418CA5299BED7100A13ADF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED418CA4299BED7100A13ADF /* ContentView.swift */; };
+		EDC8EA5C29A2794400027D24 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC8EA5B29A2794400027D24 /* TestView.swift */; };
 		EDF049C2299C26D800C0C7F8 /* ContentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF049C1299C26D800C0C7F8 /* ContentCardView.swift */; };
 		EDF049C4299C29D100C0C7F8 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDF049C3299C29D100C0C7F8 /* ContentDetailView.swift */; };
 		EDF049C7299D2C6A00C0C7F8 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDF049C6299D2C6900C0C7F8 /* AVKit.framework */; };
@@ -37,6 +38,7 @@
 		ED3166992997F0D600C03787 /* style.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = style.html; sourceTree = "<group>"; };
 		ED31669E2998095D00C03787 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		ED418CA4299BED7100A13ADF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		EDC8EA5B29A2794400027D24 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		EDF049C1299C26D800C0C7F8 /* ContentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardView.swift; sourceTree = "<group>"; };
 		EDF049C3299C29D100C0C7F8 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		EDF049C6299D2C6900C0C7F8 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -104,6 +106,7 @@
 				EDF049C1299C26D800C0C7F8 /* ContentCardView.swift */,
 				EDF049C3299C29D100C0C7F8 /* ContentDetailView.swift */,
 				ED162F26299EE08C00BE6418 /* CodeTextView.swift */,
+				EDC8EA5B29A2794400027D24 /* TestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			files = (
 				ED236469299AE44E00919A77 /* HomeCardView.swift in Sources */,
 				ED17D9922997DB5B00C29577 /* HomeView.swift in Sources */,
+				EDC8EA5C29A2794400027D24 /* TestView.swift in Sources */,
 				ED418CA5299BED7100A13ADF /* ContentView.swift in Sources */,
 				EDF049C4299C29D100C0C7F8 /* ContentDetailView.swift in Sources */,
 				ED17D9902997DB5B00C29577 /* M5LearningApp.swift in Sources */,

@@ -18,15 +18,20 @@ class ContentModel: ObservableObject {
     @Published var currentModule: Module?
     var currentModuleIndex = 0
     
-    // current lesson
+    // current lesson and question
     @Published var currentLesson: Lesson?
     var currentLessonIndex = 0
     
+    // current question
+    @Published var currentQuestion: Question?
+    var currentQuestionIndex = 0
+    
     // Current lesson description or explanation
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
     
     // current selected content and test
     @Published var currentContentSelected: Int?
+    @Published var currentTestSelected: Int?
     
     init() {
         getLocalData()
@@ -79,7 +84,7 @@ class ContentModel: ObservableObject {
         }
         // set the current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        lessonDescription = addStyling(currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
     }
     
     func hasNextLesson() -> Bool {
@@ -100,11 +105,26 @@ class ContentModel: ObservableObject {
         if currentLessonIndex < currentModule!.content.lessons.count - 1 {
             currentLessonIndex += 1
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            lessonDescription = addStyling(currentLesson!.explanation)
+            codeText = addStyling(currentLesson!.explanation)
         }
         else {
             currentLessonIndex = 0
             currentLesson = nil
+        }
+    }
+    
+    func beginTest(_ moduleId: Int) {
+        
+        // set the current module id
+        beginModule(moduleId)
+        
+        // set the current question index
+        currentQuestionIndex = 0
+        
+        // set the current question
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            codeText = addStyling(currentQuestion!.content)
         }
     }
     
