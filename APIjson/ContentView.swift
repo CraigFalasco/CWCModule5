@@ -5,18 +5,41 @@
 //  Created by Craig on 2/22/23.
 //
 
+
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var results = [TaskEntry]()
+  
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        List(results, id: \.id) { item in
+            VStack(alignment: .leading) {
+                Text(item.title)
+            }
+        }.onAppear(perform: loadData)
     }
+    
+  
+    func loadData() {
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/todos") else {
+            print("Your API end point is Invalid")
+            return
+        }
+        let request = URLRequest(url: url)
+
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let response = try? JSONDecoder().decode([TaskEntry].self, from: data) {
+                    DispatchQueue.main.async {
+                        self.results = response
+                    }
+                    return
+                }
+            }
+        }.resume()
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
