@@ -4,7 +4,8 @@
 //
 //  Created by Craig on 2/22/23.
 //
-
+// from: https://medium.com/swlh/fetch-data-from-apis-in-swiftui-74b4b50f20e9
+//
 
 import SwiftUI
 
