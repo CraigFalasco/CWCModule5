@@ -18,11 +18,11 @@ struct ContentView: View {
             
             VStack(alignment: .leading) {
                 
-                Text("The CWC Videos")
+                Text("CWC Videos")
                     .font(.largeTitle)
                     .padding(.leading)
                 
-                List(results, id: \.id) { item in
+                List(searchResults, id: \.id) { item in
                     
                     NavigationLink(destination: VideoView(inTitle: item.title, inURL: item.url)) {
                         
@@ -52,6 +52,15 @@ struct ContentView: View {
                 }
             }
         }.resume()
+    }
+    
+    var searchResults: [Video] {
+        if searchText.isEmpty {
+            return results
+        }
+        else {
+            return results.filter { $0.title.contains(searchText)}
+        }
     }
 }
 
