@@ -10,9 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @State var results = [Video]()
+    @State var searchText = ""
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List(results, id: \.id) { item in
                 
                 VStack(alignment: .leading) {
@@ -25,6 +26,7 @@ struct ContentView: View {
                 
             }.onAppear(perform: loadData)
         }
+        .searchable(text: $searchText)
     }
         
         func loadData() {
