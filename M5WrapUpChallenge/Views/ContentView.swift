@@ -13,10 +13,16 @@ struct ContentView: View {
     @State var searchText = ""
     
     var body: some View {
+        
         NavigationStack {
-            List(results, id: \.id) { item in
+            
+            VStack(alignment: .leading) {
                 
-                VStack(alignment: .leading) {
+                Text("The CWC Videos")
+                    .font(.largeTitle)
+                    .padding(.leading)
+                
+                List(results, id: \.id) { item in
                     
                     NavigationLink(destination: VideoView(inTitle: item.title, inURL: item.url)) {
                         
@@ -28,30 +34,30 @@ struct ContentView: View {
         }
         .searchable(text: $searchText)
     }
-        
-        func loadData() {
-            guard let url = URL(string: "https://codewithchris.github.io/Module5Challenge/Data.json") else {
-                print("Your API end point is Invalid")
-                return
-            }
-            let request = URLRequest(url: url)
-            
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let data = data {
-                    if let response = try? JSONDecoder().decode([Video].self, from: data) {
-                        DispatchQueue.main.async {
-                            self.results = response
-                        }
-                        return
-                    }
-                }
-            }.resume()
+    
+    func loadData() {
+        guard let url = URL(string: "https://codewithchris.github.io/Module5Challenge/Data.json") else {
+            print("Your API end point is Invalid")
+            return
         }
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                if let response = try? JSONDecoder().decode([Video].self, from: data) {
+                    DispatchQueue.main.async {
+                        self.results = response
+                    }
+                    return
+                }
+            }
+        }.resume()
     }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-
+        
     }
 }
