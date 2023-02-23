@@ -20,7 +20,7 @@ struct VideoView: View {
             
             let url = URL(string: inURL)
             VideoPlayer(player: AVPlayer(url: url!))
-                .cornerRadius(10)
+                .aspectRatio(16/9, contentMode: .fit)
         }
     }
 }
